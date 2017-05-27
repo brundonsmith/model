@@ -7,7 +7,7 @@ In practical terms, this gives the developer a completely mutable, arbitrarily c
 # Usage
 
 ```jsx
-import Model from 'mutable-model';
+var Model = require('mutable-model');
 
 class ShoppingCart extends React.Component {
 
@@ -20,15 +20,15 @@ class ShoppingCart extends React.Component {
       items: [ ]
     });
   }
-  
+
   render() {
     ...
   }
-  
+
   handleUserFirstNameChange(newVal) {
     /**
      * Normal React method:
-     * 
+     *
      * var newUser = this.state.user;
      * newUser.firstName = newVal;
      * this.setState({
@@ -36,22 +36,22 @@ class ShoppingCart extends React.Component {
      * });
      *
      */
-     
+
     this.model.user.firstName = newVal;
   }
-  
+
   handleAddItemClick(item) {
     /**
      * Normal React method:
-     * 
+     *
      * this.setState({
      *   items: this.state.items.concat([ item ]);
      * });
      *
      */
-     
+
     this.model.items.push(item);
   }
-  
+
 }
 ```
