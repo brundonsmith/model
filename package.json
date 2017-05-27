@@ -1,0 +1,26 @@
+{
+  "name": "mutable-model",
+  "version": "1.0.0",
+  "description": "This is a JavaScript class intended to serve as an alternative to React's normal state system. It utilizes ES6 Proxy to recursively intercept all assignment and deletion operations on all nested objects, and trigger a \"publication\" to registered subscribers with the new value.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brundonsmith/model.git"
+  },
+  "keywords": [
+    "model",
+    "react",
+    "state",
+    "mutable",
+    "observable"
+  ],
+  "author": "Brandon Smith",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/brundonsmith/model/issues"
+  },
+  "homepage": "https://github.com/brundonsmith/model#readme"
+}
