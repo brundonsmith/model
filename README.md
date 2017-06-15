@@ -94,3 +94,6 @@ var myModel = new Model(
 myModel.someNumber = 100; // would print "{someNumber:100}" to the console
 ```
 Passing a component as a subscriber directly is just for convenience; under the hood, all it does is call the component's `setState({})` method with an empty object; this doesn't change the React state but still triggers an update.
+
+# Misc Notes
+- It turns out, proxies don't transparently forward operations related to so-called "exotic object"; ones that have hidden properties, like Dates and, well, Proxies. I ran into a case where having a Date object in the model (wrapped in a proxy) was breaking all of its methods, so I made a change to exclude Date objects from being proxied. The model will still publish if a Date is assigned into something else, but not if it's mutated.

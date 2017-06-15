@@ -18,7 +18,7 @@ function Model(defaultSubscriber, initialValue) {
   // every step of the process.
   function recursiveProxy(obj, handler) {
     var newObj = obj;
-    if(newObj !== null && typeof newObj === 'object' && !newObj._isProxy) {
+    if(newObj !== null && typeof newObj === 'object' && !newObj._isProxy && !(newObj instanceof Date)) {
       Object.keys(newObj).forEach((key) => {
         newObj[key] = recursiveProxy(obj[key], handler);
       });
