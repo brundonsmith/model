@@ -10,7 +10,13 @@ function Model(defaultSubscriber, initialValue) {
 
   // Call all subscriber functions
   var publish = function() {
-    subscribers.forEach((subscriber) => subscriber(model));
+    subscribers.forEach((subscriber) => {
+      try {
+        subscriber(model);
+      } catch(err) {
+        console.error(err);
+      }
+    });
   };
 
   // Wrap a proxy around an object and each of its object children, recursively.
