@@ -1,6 +1,6 @@
 {
   "name": "mutable-model",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "This is a JavaScript class intended to serve as an alternative to React's normal state system. It utilizes ES6 Proxy to recursively intercept all assignment and deletion operations on all nested objects, and trigger a \"publication\" to registered subscribers with the new value.",
   "main": "index.js",
   "scripts": {
